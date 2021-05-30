@@ -3,12 +3,14 @@ package problems;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 public class OpenLock {
 
    static int openLock(int numberOfCircles, int[]sizesOfCircles, int currentPosition, int targetPosition) {
 
-       int[][] num = new int[][]{};
+       ArrayList<ArrayList<Integer>> num = new ArrayList<>(2);
+
 
 
    }
