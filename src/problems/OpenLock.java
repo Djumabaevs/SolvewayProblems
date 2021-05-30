@@ -7,9 +7,23 @@ import java.util.List;
 
 public class OpenLock {
 
-   static int openLock(int numberOfCircles, int[]sizesOfCircles, int currentPosition, int targetPosition) {
+   static int openLock(int numberOfLocks, int[] numberOfCircles, int[] currentPosition, int[] targetPosition) {
 
-       ArrayList<ArrayList<Integer>> num = new ArrayList<>(2);
+       ArrayList<int[]> num = new ArrayList<>(numberOfLocks);
+       for (int i = 0; i < numberOfLocks; i++) {
+           num.add(numberOfCircles);
+           num.add(currentPosition);
+           num.add(targetPosition);
+       }
+
+       if(numberOfCircles.length != num.size() || currentPosition.length != num.size()
+       || targetPosition.length != num.size()) {
+           System.out.println("wrong arguments");
+       }
+
+       if(currentPosition.toString() == targetPosition.toString()) {
+           return 0;
+       }
 
 
 
