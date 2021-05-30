@@ -1,10 +1,20 @@
 package problems;
 
+
+import java.util.ArrayList;
+import java.util.HashSet;
+
 public class OpenLock {
-    private static int stepsToOpenLock(int numberOfRows, int[]numberOfLockDigits,
-                                       int[] currentPositionDigits, int[]openPositionDigits) {
+
+   static int openLock(int numberOfCircles, int[]sizesOfCircles, int currentPosition, int targetPosition) {
+
+       int[][] num = new int[][]{};
 
 
-        return 0;
+   }
+
+    public static void main (String[] args) {
+
     }
+
 }
