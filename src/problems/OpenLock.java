@@ -2,6 +2,7 @@ package problems;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
@@ -9,19 +10,19 @@ public class OpenLock {
 
    static int openLock(int numberOfLocks, int[] numberOfCircles, int[] currentPosition, int[] targetPosition) {
 
-       ArrayList<int[]> num = new ArrayList<>(numberOfLocks);
-       for (int i = 0; i < numberOfLocks; i++) {
-           num.add(numberOfCircles);
-           num.add(currentPosition);
-           num.add(targetPosition);
-       }
+//       ArrayList<int[]> num = new ArrayList<>(numberOfLocks);
+//       for (int i = 0; i < numberOfLocks; i++) {
+//           num.add(numberOfCircles);
+//           num.add(currentPosition);
+//           num.add(targetPosition);
+//       }
 
-       if(numberOfCircles.length != num.size() || currentPosition.length != num.size()
-       || targetPosition.length != num.size()) {
+       if(numberOfCircles.length != numberOfLocks || currentPosition.length != numberOfLocks
+       || targetPosition.length != numberOfLocks) {
            System.out.println("wrong arguments");
        }
 
-       if(currentPosition.toString() == targetPosition.toString()) {
+       if(Arrays.toString(currentPosition).equals(Arrays.toString(targetPosition))) {
            return 0;
        }
 
@@ -38,18 +39,23 @@ public class OpenLock {
            }
            step += 1;
 
-           if(copyOfArray.toString() == currentPosition.toString()) {
+           if(Arrays.toString(copyOfArray).equals(Arrays.toString(currentPosition))) {
                System.out.println("no solution");
            }
 
-
+           if(Arrays.toString(copyOfArray).equals(Arrays.toString(targetPosition))) {
+               return step;
+           }
        }
-
 
    }
 
     public static void main (String[] args) {
-
+        int[] sizes = {4,4};
+        int[] current = {1,2};
+        int[] target = {1,3};
+        int result = openLock(2, sizes, current, target);
+        System.out.println(result);
     }
 
 }
