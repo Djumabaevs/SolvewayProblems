@@ -25,6 +25,25 @@ public class OpenLock {
            return 0;
        }
 
+       int[] copyOfArray = currentPosition.clone();
+       int step = 0;
+       while (true) {
+           for (int i = 0; i < copyOfArray.length; i++) {
+               int item = copyOfArray[i];
+               if(item == numberOfCircles[i]) {
+                   copyOfArray[i] = 1;
+               } else {
+                   copyOfArray[i] = item + 1;
+               }
+           }
+           step += 1;
+
+           if(copyOfArray.toString() == currentPosition.toString()) {
+               System.out.println("no solution");
+           }
+
+
+       }
 
 
    }
